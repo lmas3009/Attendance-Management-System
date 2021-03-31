@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Register Web Application</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='stylesheet/home.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Attendance Mamangement System</p>
+        </div>
+        <div class="main">
+            <div class="form">
+                <form action="{{ url_for('getdata') }}" method="post" enctype="multipart/form-data">
+                    <div class="maintitle">
+                        <input type="file" name="class_data" id="">
+                    </div>
+                    <div class="mainform">
+                        <label>Class Name</label><br>
+                        <input type="text" name="class_name"><br>
+                        <label>Email Id</label><br>
+                        <input type="email" name="email"><br>
+                        <label>Password</label><br>
+                        <input type="password" name="password"><br>
+                        <div class="formsubmit">
+                            <input type="submit" value="Upload">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="file">
+                            <input type="file" name="drag_drop">
+                        </div>
+                        <div class="classname">
+                            <div class="title">
+                                <p>Class Name</p>
+                            </div>
+                            <input type="text" name="classname">
+                        </div> -->
+    <!-- <h1>Welcome to Home Page</h1>
+        <label>Class Name</label>
+        <input type="text" name="class_name"><br>
+        <input type="file" name="class_data"><br>
+        <label>Enter your email id</label>
+        <input type="email" name="email"><br>
+        <label>Enter your password</label>
+        <input type="password" name="password"><br>
+        <a href="attendance.html"><input type="button" value="Get Data"></a>
+     -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Mamangement System</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='stylesheet/att_style.css') }}">
+</head>
+
+<body>
+    <div class="header">
+        <p>Attendance Mamangement System</p>
+    </div>
+    <div class="sub-header">
+        <p>Founded: {{leng}} address</p>
+    </div>
+    <form action="{{ url_for('getabstent') }}" method="post">
+        <table>
+            <tr>
+                {% for i in header %}
+                    <th>{{i}}</th>
+                {% endfor %}
+                <th>Present/Absent</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>
+                    <input type="checkbox" name="{{i[0]}}" value="{{i[1]}}" >
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="submitatt">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>    
+</html>
